@@ -1,4 +1,4 @@
-string ari(string s){
+string ari(string){
 int letters=0,words=0,sentences=0,p=0;
    do{
 	  if(isalnum(s[p]))
