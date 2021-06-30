@@ -4,25 +4,28 @@
 #include <ctype.h>
 #include <math.h>
 
-string std[14] = {"Kindergarten", "First/Second Grade", "Third Grade", "Fourth Grade", "Fifth Grade", "Sixth Grade", "Seventh Grade",
+string s[14] = {"Kindergarten", "First/Second Grade", "Third Grade", "Fourth Grade", "Fifth Grade", "Sixth Grade", "Seventh Grade",
     "Eighth Grade", "Ninth Grade", "Tenth Grade", "Eleventh Grade", "Twelfth Grade", "College student", "Professor"};
 
 string ari(string s) {
     int p = strlen(s);
-    int letters = 0;
+    int characters = 0;
     int words = 0;
     int sentences = 0;
     for (int i=0;i<p;i++) {
         if (isalnum(s[i])) {
-            characters++ ;
+            characters +=1;
         }
         else if (s[i] == ' ') {
-            words++ ;
+            words +=1;
         }
         else if (s[i] == '.' || s[i] == '?' || s[i] == '!') {
-            sentences++ ;
+            sentences +=1;
         }
     }
-    float index = trunc((4.71*((float)letters/words)) + (0.5*((float)words/sentences)) - 21.43)+1;
-    return std[index];
+    float value = ((4.71*((float)characters/words)) + (0.5*((float)words/sentences)) - 21.43);
+    int a = (int)value;
+    int value2 = a +1;
+    int index = value2 - 1;
+    return s[index];
 }
