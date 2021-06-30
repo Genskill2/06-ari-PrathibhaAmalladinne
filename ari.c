@@ -1,9 +1,3 @@
-#include <stdio.h>
-#include <string.h>
-#include <cs50.h>
-#include <math.h>
-#include <ctype.h>
-
 string ari(string s){
 int letters=0,words=0,sentences=0,p=0;
    do{
