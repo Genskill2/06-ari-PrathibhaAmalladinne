@@ -1,39 +1,28 @@
 #include <stdio.h>
 #include <string.h>
 #include <cs50.h>
-#include <math.h>
 #include <ctype.h>
+#include <math.h>
 
-string ari(string s){
-int letters=0,words=0,sentences=0,p=0;
-   do{
-	  if(isalnum(s[p]))
-	    {letters++; }
-	   
-	  if(s[p]==' ')
-	    {words++; }
-	  if((s[p]=='.') || (s[p]=='!') || (s[p]=='?'))
-	    { sentences++;}
-          p++;
+string std[14] = {"Kindergarten", "First/Second Grade", "Third Grade", "Fourth Grade", "Fifth Grade", "Sixth Grade", "Seventh Grade",
+    "Eighth Grade", "Ninth Grade", "Tenth Grade", "Eleventh Grade", "Twelfth Grade", "College student", "Professor"};
+
+string ari(string s) {
+    int p = strlen(s);
+    int letters = 0;
+    int words = 0;
+    int sentences = 0;
+    for (int i=0;i<p;i++) {
+        if (isalnum(s[i])) {
+            characters++ ;
         }
-	  while((s[p]!='.') || (s[p+1]!='\0')); 
-  
-sentences=sentences+1;
- //printf("\n%d\n%d\n%d\n",letters,words,sentences); 
-int index = trunc ((4.71*((float)letters/words))+(0.5*((float) words/sentences))-21.43)+1;
- //printf("%d",index);
- if(index==1){printf("kindergarten");}
- else if(index==2){printf(" First/Second Grade");}
- else if(index==3){printf("Third Grade");}
- else if(index==4){printf("Fourth Grade");}
- else if(index==5){printf("Fifth Grade");}
- else if(index==6){printf("Sixth Grade ");}
- else if(index==7){printf("Seventh Grade");}
- else if(index==8){printf("Eighth Grade");}
- else if(index==9){printf("Ninth Grade");}
- else if(index==10){printf("Tenth Grade");}
- else if(index==11){printf("Eleventh Grade");}
- else if(index==12){printf("Twelfth grade");}
- else if(index==13){printf("College student");}
- else if(index==14){printf("Professor");}
- }
+        else if (s[i] == ' ') {
+            words++ ;
+        }
+        else if (s[i] == '.' || s[i] == '?' || s[i] == '!') {
+            sentences++ ;
+        }
+    }
+    float index = trunc((4.71*((float)letters/words)) + (0.5*((float)words/sentences)) - 21.43)+1;
+    return std[index];
+}
