@@ -16,7 +16,7 @@ int letters=0,words=0,sentences=0,p=0;
 	    { sentences++;}
           p++;
         }
-	  while((s[p]!='.') || (s[p+1]!='\0')); 
+	  while((p<strlen(s)); 
   
 sentences=sentences+1;
 int index = trunc ((4.71*((float)letters/words))+(0.5*((float) words/sentences))-21.43)+1;
