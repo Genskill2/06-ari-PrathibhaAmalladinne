@@ -1,7 +1,12 @@
+#include <stdio.h>
+#include <string.h>
+#include <cs50.h>
+#include <math.h>
+#include <ctype.h>
+
 string ari(string s){
 int letters=0,words=0,sentences=0,p=0;
-      string s = get_string();
-      do{
+   do{
 	  if(isalnum(s[p]))
 	    {letters++; }
 	   
@@ -14,9 +19,9 @@ int letters=0,words=0,sentences=0,p=0;
 	  while((s[p]!='.') || (s[p+1]!='\0')); 
   
 sentences=sentences+1;
- 
+ //printf("\n%d\n%d\n%d\n",letters,words,sentences); 
 int index = trunc ((4.71*((float)letters/words))+(0.5*((float) words/sentences))-21.43)+1;
- 
+ //printf("%d",index);
  if(index==1){printf("kindergarten");}
  else if(index==2){printf(" First/Second Grade");}
  else if(index==3){printf("Third Grade");}
