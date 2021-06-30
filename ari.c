@@ -19,21 +19,21 @@ int letters=0,words=0,sentences=0,p=0;
 	  while((s[p]!='.') || (s[p+1]!='\0')); 
   
 sentences=sentences+1;
- //printf("\n%d\n%d\n%d\n",letters,words,sentences); 
 int index = trunc ((4.71*((float)letters/words))+(0.5*((float) words/sentences))-21.43)+1;
- //printf("%d",index);
- if(index==1){printf("kindergarten");}
- else if(index==2){printf(" First/Second Grade");}
- else if(index==3){printf("Third Grade");}
- else if(index==4){printf("Fourth Grade");}
- else if(index==5){printf("Fifth Grade");}
- else if(index==6){printf("Sixth Grade ");}
- else if(index==7){printf("Seventh Grade");}
- else if(index==8){printf("Eighth Grade");}
- else if(index==9){printf("Ninth Grade");}
- else if(index==10){printf("Tenth Grade");}
- else if(index==11){printf("Eleventh Grade");}
- else if(index==12){printf("Twelfth grade");}
- else if(index==13){printf("College student");}
- else if(index==14){printf("Professor");}
+ string var;
+ if(index==1){var = "kindergarten ";}
+ else if(index==2){var = " First/Second Grade ";}
+ else if(index==3){var = "Third Grade ";}
+ else if(index==4){var = "Fourth Grade ";}
+ else if(index==5){var = "Fifth Grade ";}
+ else if(index==6){var = "Sixth Grade  ";}
+ else if(index==7){var = "Seventh Grade ";}
+ else if(index==8){var = "Eighth Grade ";}
+ else if(index==9){var = "Ninth Grade ";}
+ else if(index==10){var = "Tenth Grade ";}
+ else if(index==11){var = "Eleventh Grade ";}
+ else if(index==12){var = "Twelfth grade ";}
+ else if(index==13){var = "College student ";}
+ else if(index==14){var = "Professor ";}
+ return var;
  }
